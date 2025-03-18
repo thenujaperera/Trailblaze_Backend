@@ -27,7 +27,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: [trailblaze_nodejs_api]
+    runs-on: [ubuntu-latest]
     steps:
       - name: Pull image from docket hub
         run: docker pull thenuja/nodejs-app:latest
