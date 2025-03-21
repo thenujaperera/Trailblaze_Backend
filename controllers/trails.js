@@ -19,9 +19,9 @@ export async function getTrailDetails(req, res) {
             // Add more image URLs as needed
         ];
         // Add a static image URL to each trail
-        const trailsWithImages = data.map(trail => ({
+        const trailsWithImages = data.map((trail, index) => ({
             ...trail,
-            imageUrl: imageUrls[index % imageUrls.length]
+            imageUrl: imageUrls[index % imageUrls.length] // Cycle through image URLs
         }));
 
         return res.status(200).json({
