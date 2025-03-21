@@ -10,10 +10,11 @@ export async function getTrailDetails(req, res) {
 
         if (error) throw error;
 
+        
         // Add a static image URL to each trail
         const trailsWithImages = data.map(trail => ({
             ...trail,
-            imageUrl: 'https://rockyruggiero.com/wp-content/uploads/2017/09/Padua.jpg' // static image URL
+            imageUrl: 'https://media-hosting.imagekit.io//f511187b4077490b/hintersee-3601004_1280.jpg?Expires=1837164860&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Aull5F7JSOm6ogZbsk-AcSSlD796vAvLzEbHy~k7CJaIAg7f7x79x9CZj68hZNVCMVdp3HqUiiv7sl8lrr16w-OQr4wkbbHVud1Reh9J48F75OEBvoMuTDlJcELvfouxOIeMKvQn7xrdYkhLwrs9PjhtvCWIpESqjeQS0UV~fmyYxTd6k-I64qly1A-EhbGFATZuBKSubA56TKyow8EkF9PQ6iB5Fhrobqtqtx-y4wjSX-t2M0fb1ldipO9~yMWgKKgJBzphv5YyVWBXwmILBDsLOaHdZlZbX7K-G0NsmeDGUDUQDdKrRqVmp8B2ZryVEhJZ1qJhBUn822V4swURnA__' // static image URL
         }));
 
         return res.status(200).json({
