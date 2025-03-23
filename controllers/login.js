@@ -34,7 +34,7 @@ export async function Login(req, res) {
         }
 
         // Generate JWT
-        const token = jwt.sign({ id: user.id, role: user.role }, SECRET_ACCESS_TOKEN, { expiresIn: '20m' });
+        const token = jwt.sign({ id: user.id, role: user.role }, SECRET_ACCESS_TOKEN, { expiresIn: '30d' });
 
         // Securely set HTTP-only cookie
         res.cookie("SessionID", token, { 
