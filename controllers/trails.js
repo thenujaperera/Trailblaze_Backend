@@ -6,7 +6,7 @@ export async function getTrailDetails(req, res) {
         // Fetch trail details from the trails table
         const { data, error } = await supabase
             .from('trails')
-            .select('name, description,id');
+            .select('name, description, id, difficulty_level');
 
         if (error) throw error;
 
